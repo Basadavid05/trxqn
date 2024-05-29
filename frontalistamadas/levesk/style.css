@@ -1,0 +1,17 @@
+body{
+    background-color: black;
+    color: aliceblue;
+}
+
+tr, td {
+    background-color: #000000;
+    color: #ddd;
+    color: #ffffff;
+    text-align: left;
+
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+
+
+}
+
