@@ -1,0 +1,140 @@
+﻿
+
+7
+8
+9
+18
+11
+12
+13
+14
+15
+f
+16
+17
+18
+19
+Enamespace dolgozok
+E internal class Program
+{
+static Adatbazis db = new Adatbazis();
+static List<Dolgozok> dolgozo = new List<Dolgozok>();
+static void Main(string[] args)
+dolgozo= db.getAllDolgozo();
+feladat01();
+feladat82(); feladat030);
+28
+Feladat04();
+21
+feladat05()
+22
+feladat86();
+23
+Feladat@7();
+24
+feladat08();
+25
+26
+27
+28 29
+38
+{
+31
+32
+33
+34
+35
+Console.WriteLine("Feladat vege!");
+Console.ReadLine();
+private static void feladat08()
+var reszlegek = dolgozo.GroupBy(a => a.reszleg).Select(b => new { reszleg = b.Key, letszam = b.Count() }); Console.WriteLine("\n8. Feladat: ");
+foreach (var item in reszlegek)
+Console.WriteLine($"\t {item.reszleg); {item. letszam}");
+36
+37
+38
+39
+40
+41
+42
+43
+f
+44
+private static void feladat870)
+Console.WriteLine("\n7. Feladat:");
+foreach (var item in dolgozo.FindAll(a=> a.reszleg.Equals("beszerzés")))
+Console.WriteLine($"\t {item.nev}");
+45
+}
+46
+47
+48
+49
+{
+58
+51
+private static void feladat86()
+Dolgozok legkorabb = dolgozo.Find(a => a.belepesev = dolgozo.Min(b> b.belepesev));
+Console.WriteLine($"\n6. Feladat: Legkorábban belépett: {legkorabb.nev}, {legkorabb.neme}, {legkorabb.reszleg}, {legkorabb.belepesev}, {legkorabb.ber}");
+52
+53
+
+
+
+
+vege az elsonek
+
+
+
+53
+54
+55
+56
+57
+58
+59
+68
+61
+62
+63
+64
+65
+66
+67
+68
+69
+78
+71
+72
+73
+74
+75
+76
+77
+78
+79
+88
+81
+82
+83
+84
+85
+86
+87
+private static void feladat05()
+Dolgozok legkesobb dolgozo.Find(a => a.belepesev = dolgozo. Max(b> b.belepesev));
+Console.WriteLine($"\n5. Feladat: Legkésőbb belépett: {legkesobb.nev}, {legkesobb.neme}, {legkesobb.reszleg}, {legkesobb.belepesev}, {legkesobb.ber}");
+private static void feladat04()
+Dolgozok legkissebb = dolgozo.Find(a => a.ber = dolgozo.Min(b => b.ber));
+Console.WriteLine($"\n4. Feladat: Lekevesebbet kereső: (legkissebb.nev}, {legkissebb.neme}, {legkissebb.reszleg}, {legkissebb.belepesev}, {legkissebb.ber}");
+private static void feladat03()
+Dolgozok legnagyobb = dolgozo.Find(a => a.ber = dolgozo.Max(b => b.ber));
+Console.WriteLine($"\n3. Feladat: Legtöbbet kereső: {legnagyobb.nev}, {legnagyobb.neme}, {legnagyobb.reszleg}, {Legnagyobb.belepesev}, {legnagyobb.ber}");
+private static void feladate2()
+Console.WriteLine($"\n2. Feladat: (dolgozo.Count) fo");
+private static void feladat01()
+Console.WriteLine($"1. Feladat: ");
+foreach( var item in dolgozo )
+Console.WriteLine($"Nev: {item.nev}, Neme: {item.neme}, Reszleg: {item.reszleg), Belepeseve: {item.belepesev}, Ber: {item.ber}");
+
+
