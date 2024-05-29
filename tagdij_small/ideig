@@ -1,0 +1,67 @@
+ /*
+        const cardContainer = document.querySelector(".card-container");
+        cardContainer.innerHTML = "";
+        ugyfel.forEach(ugyfel => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <div class="card-image">
+                    <img src="${ugyfel.image}" alt="${ugyfel.name}">
+                </div>
+                <div class="card-content">
+                    <h2>${ugyfel.name}</h2>
+                    <p>${ugyfel.description}</p>
+                </div>
+                <div class="card-action">
+                    <a href="edit.html?id=${ugyfel.id}">Edit</a>
+                    <a href="delete.html?id=${ugyfel.id}">Delete</a>
+                </div>
+            `;
+            cardContainer.appendChild(card);
+        });
+        */ 
+
+
+
+        const apiUr= "http://localhost/api/index.php/?ugyfel";
+const cardContainer = document.querySelector("#ugyfelek");
+
+
+document.addEventListener("DOMContentLoaded",() => {
+
+
+    async function getAllUgyfel(){{
+        const response = await fetch(apiUr);
+        const ugyfel = await response.json();
+        showCards(ugyfel);
+    }
+
+
+    function showCards(ugyfel){
+        cardContainer.innerHTML = "";
+        let cards="";
+
+
+        ugyfel.forEach(ugyfel => {
+            cards+=`
+
+            <div class="card-content">
+                <h2>${ugyfel.name}</h2>
+                <p>${ugyfel.description}</p>
+            </div>
+            <div class="card-action">
+                <a href="edit.html?id=${ugyfel.id}">Edit</a>
+                <a href="delete.html?id=${ugyfel.id}">Delete</a>
+            </div>
+        `;
+        cardContainer.innerHTML = cards;
+        
+        });
+    }
+
+       
+    }
+    getAllUgyfel();
+
+}
+);
